@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ brand }} - Verified</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="bg-grad"></div>
+<main class="card success">
+  <img class="avatar" src="{{ avatar }}" alt="avatar">
+  <h1>Verification Complete</h1>
+  <p>Welcome, <b>{{ username }}</b>. Your account is now verified with {{ brand }}.</p>
+  <div class="tok-box">
+    <div class="tok-label">Your access key</div>
+    <code id="tok">{{ access_token }}</code>
+    <button id="copy">Copy</button>
+  </div>
+  <p class="fine">You may close this tab.</p>
+</main>
+<script>
+document.getElementById("copy").addEventListener("click", function () {
+  navigator.clipboard.writeText(document.getElementById("tok").textContent)
+    .then(function () {
+      document.getElementById("copy").textContent = "Copied!";
+    });
+});
+</script>
+</body>
+</html>
