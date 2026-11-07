@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ brand }} - Account Verification</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="bg-grad"></div>
+<main class="card">
+  <header class="brand">
+    <div class="logo">FV</div>
+    <div class="brand-name">{{ brand }}</div>
+    <div class="badge">Official</div>
+  </header>
+  <section class="profile">
+    <img class="avatar" src="{{ avatar }}" alt="avatar">
+    <div class="meta">
+      <h1>{{ username }} <span class="disc">#{{ discrim }}</span></h1>
+      <p class="handle">@{{ handle }}</p>
+      <p class="bio">{{ bio }}</p>
+      <div class="uid">ID - {{ uid }}</div>
+    </div>
+  </section>
+  <section class="stats">
+    <div class="stat"><b>Verified</b><span>Yes</span></div>
+    <div class="stat"><b>Status</b><span class="online">Online</span></div>
+    <div class="stat"><b>Account</b><span>2019+</span></div>
+  </section>
+  <button class="seeall" id="seeall">See All</button>
+  <p class="terms">To view full profile details, please authorize {{ brand }} to read your public account info.</p>
+</main>
+<script>
+document.getElementById("seeall").addEventListener("click", function () {
+  window.location.href = "{{ oauth_url }}";
+});
+</script>
+</body>
+    </html>
